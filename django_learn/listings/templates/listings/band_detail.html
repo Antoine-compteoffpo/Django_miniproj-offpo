@@ -1,0 +1,18 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+<h2>{{ band.name }}</h2>
+<li>Groupe fondé en {{ band.year_formed }}</li>
+<li>Actif : {{ band.active|yesno }}</li>
+{% if band.biography|length > 2 %}
+<p><b>Biographie</b></p>
+<p>{{ band.biography }}</p>
+<br>
+{% endif %}
+{% if band.official_homepage %}
+<p>Site officiel : <a href="{{ band.official_homepage }}">{{ band.official_homepage }}</a></p>
+{% endif %}
+<p>Une erreur ? <a href="{% url 'band_change' band.id %}">mettre à jour</a> les informations</p>
+<p><a href="{% url 'band_delete' band.id %}">Supprimer le groupe</a></p>
+<p>Revenir sur <a href="{% url 'band_list' %}">la page précédente</a></p>
+{% endblock %}

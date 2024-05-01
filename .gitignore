@@ -1,0 +1,6 @@
+# Ignorer la variable d'environnement
+env/
+.idea/
+.git/
+env/
+

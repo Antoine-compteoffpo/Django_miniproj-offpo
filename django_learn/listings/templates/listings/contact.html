@@ -1,0 +1,13 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h3>Nous sommes là pour vous aider</h3>
+
+<form action="{% url 'confirmation_page' %}" method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit" value="Envoyer">
+</form>
+
+{% endblock %}

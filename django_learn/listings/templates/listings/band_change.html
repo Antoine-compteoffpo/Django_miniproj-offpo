@@ -1,0 +1,15 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+<h1>Mise à jour du groupe {{ band.name }}</h1>
+
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Envoyer">
+</form>
+
+
+<p>Revenir sur <a href="{% url 'band_detail' id %}">la page précédente</a>.</p>
+{% endblock %}
